@@ -1,6 +1,7 @@
 ---
 title: Legal and Support Center
 description: Official legal pages and support contacts for Happie Couple.
+layout: default
 home: true
 ---
 

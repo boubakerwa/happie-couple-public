@@ -1,6 +1,7 @@
 ---
 title: Privacy Policy
 description: How Happie Couple collects, uses, and protects your personal data.
+layout: default
 ---
 
 # Privacy Policy for Happie Couple

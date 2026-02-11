@@ -1,6 +1,7 @@
 ---
 title: Terms of Service
 description: Terms and conditions for using the Happie Couple mobile app.
+layout: default
 ---
 
 # Terms of Service for Happie Couple
