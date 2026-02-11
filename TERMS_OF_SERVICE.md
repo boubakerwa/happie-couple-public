@@ -1,3 +1,8 @@
+---
+title: Terms of Service
+description: Terms and conditions for using the Happie Couple mobile app.
+---
+
 # Terms of Service for Happie Couple
 
 **Last Updated: February 10, 2026**
@@ -127,7 +132,7 @@ OUR TOTAL LIABILITY SHALL NOT EXCEED THE AMOUNT YOU PAID US IN THE PAST 12 MONTH
 
 ## 11. Privacy
 
-Your privacy is important to us. Please review our [Privacy Policy](PRIVACY_POLICY.md) to understand how we collect, use, and protect your data.
+Your privacy is important to us. Please review our [Privacy Policy]({{ '/PRIVACY_POLICY' | relative_url }}) to understand how we collect, use, and protect your data.
 
 ## 12. Indemnification
 

@@ -1,47 +1,55 @@
-# Happie Couple - Legal & Support
-
-Welcome to Happie Couple's legal information and support center.
-
-## Legal Documents
-
-- **[Privacy Policy](PRIVACY_POLICY)** - How we collect, use, and protect your data
-- **[Terms of Service](TERMS_OF_SERVICE)** - Rules and guidelines for using our app
-
-## Support & Help
-
-Need assistance? We're here to help!
-
-- **Email**: support@happiecouple.com
-- **Privacy Questions**: privacy@happiecouple.com
-
-## About Happie Couple
-
-Happie Couple is a relationship coaching app designed to help couples:
-- ✅ Improve daily communication through structured check-ins
-- ✅ Build deeper connections with guided weekly meetings
-- ✅ Track relationship growth and milestones
-- ✅ Get AI-powered insights and conversation starters
-- ✅ Create a shared space for memories and reflections
-
-## Quick Links
-
-- [Download on App Store](#) - Coming Soon
-- [Privacy Policy](PRIVACY_POLICY)
-- [Terms of Service](TERMS_OF_SERVICE)
-- [GitHub Repository Setup Guide](GITHUB_PAGES_SETUP)
-- [Date Ideas Journey](user-journeys/05-date-ideas)
-
-## Contact Information
-
-**General Inquiries**: support@happiecouple.com
-**Privacy & Data**: privacy@happiecouple.com
-**Business Address**: [To be added]
-
+---
+title: Legal and Support Center
+description: Official legal pages and support contacts for Happie Couple.
+home: true
 ---
 
-**Last Updated**: February 8, 2026
-**App Version**: 1.0.0
+<section class="hero">
+  <p class="kicker">Official Resources</p>
+  <h1>Happie Couple Legal and Support</h1>
+  <p>Find everything you need in one place: Privacy Policy, Terms of Service, and direct support contacts for account, billing, and data questions.</p>
+  <div class="cta-row">
+    <a class="btn btn-primary" href="{{ '/PRIVACY_POLICY' | relative_url }}">Read Privacy Policy</a>
+    <a class="btn btn-secondary" href="{{ '/TERMS_OF_SERVICE' | relative_url }}">Read Terms of Service</a>
+  </div>
+</section>
 
----
+<section class="panel" style="margin-top: 1rem;">
+  <p class="kicker">Quick Access</p>
+  <div class="grid">
+    <article class="card">
+      <h3>Privacy and Data</h3>
+      <p>How we collect, protect, and process personal and relationship data.</p>
+      <p><a href="{{ '/PRIVACY_POLICY' | relative_url }}">Open Privacy Policy</a></p>
+    </article>
+    <article class="card">
+      <h3>Terms and Usage</h3>
+      <p>Usage rules, subscriptions, eligibility, and account responsibilities.</p>
+      <p><a href="{{ '/TERMS_OF_SERVICE' | relative_url }}">Open Terms of Service</a></p>
+    </article>
+    <article class="card">
+      <h3>Support Team</h3>
+      <p>Need help with your account or app experience? Contact us directly.</p>
+      <p><a href="mailto:support@happiecouple.app">support@happiecouple.app</a></p>
+    </article>
+  </div>
+</section>
 
-*Happie Couple - Building stronger relationships, one check-in at a time.* ❤️
+## Need Help Fast?
+
+- General support: `support@happiecouple.app`
+- Privacy and data requests: `privacy@happiecouple.app`
+- In-app support path: `Settings > Help & Support > Contact Us`
+
+## What Happie Couple Helps You Do
+
+- Build better daily communication through guided check-ins
+- Run stronger weekly conversations with AI-generated agendas
+- Save relationship moments in private or shared notes
+- Discover personalized date ideas and track progress over time
+
+## App and Policy Status
+
+- Last legal update: February 10, 2026
+- Platform: iOS mobile app
+- Current policy pages: Privacy Policy and Terms of Service

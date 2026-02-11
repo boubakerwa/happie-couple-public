@@ -1,3 +1,8 @@
+---
+title: Privacy Policy
+description: How Happie Couple collects, uses, and protects your personal data.
+---
+
 # Privacy Policy for Happie Couple
 
 **Last Updated: February 10, 2026**
