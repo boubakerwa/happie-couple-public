@@ -1,0 +1,23 @@
+title: Happie Couple Legal
+description: Privacy Policy, Terms of Service, and support information for Happie Couple - A relationship coaching app for couples
+theme: jekyll-theme-cayman
+show_downloads: false
+google_analytics: # Add your GA tracking ID here if you want analytics
+
+# GitHub Pages settings
+url: "https://boubakerwa.github.io"
+baseurl: "/happie-couple"
+
+# Social links
+github_username: boubakerwa
+
+# Exclude files from Jekyll build
+exclude:
+  - GITHUB_PAGES_SETUP.md
+  - APP_STORE_METADATA.md
+  - BETA_TESTING_GUIDE.md
+  - REVENUECAT_SETUP.md
+  - ROADMAP.md
+  - APP_PRIVACY_LABELS.md
+  - FIRESTORE_RULES_AUDIT.md
+  - LOCALIZATION_QA_CHECKLIST.md
