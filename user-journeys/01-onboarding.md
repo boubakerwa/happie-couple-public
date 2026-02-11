@@ -1,3 +1,9 @@
+---
+title: 01. Onboarding & Sign Up Journey
+layout: default
+description: 01. Onboarding & Sign Up Journey for Happie Couple.
+---
+
 # 01. Onboarding & Sign Up Journey
 
 ## Overview

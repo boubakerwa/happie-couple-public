@@ -1,3 +1,9 @@
+---
+title: 03. Daily Notes Journey
+layout: default
+description: 03. Daily Notes Journey for Happie Couple.
+---
+
 # 03. Daily Notes Journey
 
 ## Overview

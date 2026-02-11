@@ -1,3 +1,9 @@
+---
+title: 06. Subscription Journey
+layout: default
+description: 06. Subscription Journey for Happie Couple.
+---
+
 # 06. Subscription Journey
 
 ## Overview

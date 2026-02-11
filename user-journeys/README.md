@@ -1,3 +1,9 @@
+---
+title: Happie Couple - User Journeys Documentation
+layout: default
+description: Happie Couple - User Journeys Documentation for Happie Couple.
+---
+
 # Happie Couple - User Journeys Documentation
 
 This folder contains detailed documentation of all user journeys in the Happie Couple app.

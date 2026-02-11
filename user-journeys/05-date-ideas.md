@@ -1,3 +1,9 @@
+---
+title: 05. Date Ideas Journey
+layout: default
+description: 05. Date Ideas Journey for Happie Couple.
+---
+
 # 05. Date Ideas Journey
 
 ## Overview
