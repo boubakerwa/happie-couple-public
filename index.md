@@ -6,6 +6,14 @@ home: true
 ---
 
 <section class="hero">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="{{ '/assets/logos/dark_mode_icon_name.jpeg' | relative_url }}">
+    <img
+      class="hero-logo"
+      src="{{ '/assets/logos/light_mode_icon_name.jpeg' | relative_url }}"
+      alt="Happie Couple logo wordmark"
+    >
+  </picture>
   <p class="kicker">Official Resources</p>
   <h1>Happie Couple Legal and Support</h1>
   <p>Find everything you need in one place: Privacy Policy, Terms of Service, and direct support contacts for account, billing, and data questions.</p>
