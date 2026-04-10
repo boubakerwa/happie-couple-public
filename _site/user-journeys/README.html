@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Happie Couple - User Journeys Documentation for Happie Couple.">
+  <meta name="theme-color" content="#f8f3fb">
+  <title>Happie Couple - User Journeys Documentation | Happie Couple Legal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/jpeg" media="(prefers-color-scheme: light)" href="/happie-couple-public/assets/logos/light_mode_icon_noname.jpeg">
+  <link rel="icon" type="image/jpeg" media="(prefers-color-scheme: dark)" href="/happie-couple-public/assets/logos/dark_mode_icon_noname.jpeg">
+  <link rel="apple-touch-icon" href="/happie-couple-public/assets/logos/light_mode_icon_noname.jpeg">
+  <link rel="stylesheet" href="/happie-couple-public/assets/css/style.css">
+</head>
+<body>
+  <div class="bg-glow bg-glow-1"></div>
+  <div class="bg-glow bg-glow-2"></div>
+
+  <header class="site-header">
+    <div class="shell nav-wrap">
+      <a class="brand" href="/happie-couple-public/">
+        <picture class="brand-picture">
+          <source media="(prefers-color-scheme: dark)" srcset="/happie-couple-public/assets/logos/dark_mode_icon_noname.jpeg">
+          <img
+            class="brand-icon"
+            src="/happie-couple-public/assets/logos/light_mode_icon_noname.jpeg"
+            alt="Happie Couple logo"
+          >
+        </picture>
+        <span>Happie Couple</span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/happie-couple-public/">Home</a>
+        <a href="/happie-couple-public/PRIVACY_POLICY">Privacy</a>
+        <a href="/happie-couple-public/TERMS_OF_SERVICE">Terms</a>
+        <a href="mailto:support@happiecouple.app">Support</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="shell content-shell">
+    
+      <article class="panel prose">
+        <h1 id="happie-couple---user-journeys-documentation">Happie Couple - User Journeys Documentation</h1>
+
+<p>This folder contains detailed documentation of all user journeys in the Happie Couple app.</p>
+
+<h2 id="-app-structure">📱 App Structure</h2>
+
+<p>The production app (main.dart) has <strong>4 main tabs</strong>:</p>
+
+<ol>
+  <li><strong>Notes</strong> - Daily relationship moments tracking</li>
+  <li><strong>Agenda</strong> - Weekly AI-generated coaching topics</li>
+  <li><strong>Date Ideas</strong> - Personalized date suggestions</li>
+  <li><strong>Profile</strong> - Settings, subscription, partner linking</li>
+</ol>
+
+<hr />
+
+<h2 id="️-user-journeys">🗺️ User Journeys</h2>
+
+<h3 id="core-journeys">Core Journeys</h3>
+<ul>
+  <li><a href="01-onboarding.md">01. Onboarding &amp; Sign Up</a> - First-time user experience</li>
+  <li><a href="02-partner-linking.md">02. Partner Linking</a> - Connecting with your partner</li>
+  <li><a href="03-daily-notes.md">03. Daily Notes</a> - Adding and managing relationship notes</li>
+  <li><a href="04-weekly-coaching.md">04. Weekly Coaching</a> - Generating and using coaching agendas</li>
+  <li><a href="05-date-ideas.md">05. Date Ideas</a> - Finding and saving date ideas</li>
+</ul>
+
+<h3 id="monetization--engagement">Monetization &amp; Engagement</h3>
+<ul>
+  <li><a href="06-subscription.md">06. Subscription Journey</a> - Free trial to Premium upgrade</li>
+  <li><a href="07-notifications.md">07. Notifications</a> - Setting up reminders and alerts</li>
+</ul>
+
+<h3 id="support--settings">Support &amp; Settings</h3>
+<ul>
+  <li><a href="08-profile.md">08. Profile Management</a> - Editing profile and preferences</li>
+  <li><a href="09-help-support.md">09. Help &amp; Support</a> - Accessing crisis resources</li>
+</ul>
+
+<hr />
+
+<h2 id="-target-user-personas">🎯 Target User Personas</h2>
+
+<h3 id="primary-persona-sarah--james">Primary Persona: Sarah &amp; James</h3>
+<ul>
+  <li><strong>Age</strong>: 28-35</li>
+  <li><strong>Relationship</strong>: Married 2-5 years or long-term relationship</li>
+  <li><strong>Tech savviness</strong>: Moderate (comfortable with apps)</li>
+  <li><strong>Goal</strong>: Improve communication, maintain connection</li>
+  <li><strong>Pain point</strong>: Busy schedules, falling into routines</li>
+</ul>
+
+<h3 id="secondary-persona-emma--alex">Secondary Persona: Emma &amp; Alex</h3>
+<ul>
+  <li><strong>Age</strong>: 24-30</li>
+  <li><strong>Relationship</strong>: Dating seriously (1-2 years)</li>
+  <li><strong>Tech savviness</strong>: High (early adopters)</li>
+  <li><strong>Goal</strong>: Build strong foundation, learn relationship skills</li>
+  <li><strong>Pain point</strong>: First serious relationship, need guidance</li>
+</ul>
+
+<hr />
+
+<h2 id="-user-flow-summary">📊 User Flow Summary</h2>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Welcome Screen
+    ↓
+Sign Up → Email Verification → Profile Setup
+    ↓
+[Freemium Decision Point]
+    ├─→ Start Free Trial (7 days) → Premium Features
+    └─→ Continue Free → Limited Features
+    ↓
+Home Screen (4 tabs)
+    ├─→ Notes Tab (Add daily notes)
+    ├─→ Agenda Tab (Weekly coaching)
+    ├─→ Date Ideas Tab (Browse ideas)
+    └─→ Profile Tab (Settings &amp; subscription)
+    ↓
+[Partner Linking - Optional]
+    ├─→ Generate linking code
+    └─→ Enter partner's code
+    ↓
+Ongoing Usage
+    ├─→ Daily: Add notes, get reminders
+    ├─→ Weekly: Generate agenda, have meeting
+    └─→ As needed: Browse date ideas, adjust settings
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="-success-metrics">🚀 Success Metrics</h2>
+
+<h3 id="onboarding-success">Onboarding Success</h3>
+<ul>
+  <li>✅ User completes sign up</li>
+  <li>✅ User adds first note (within 24 hours)</li>
+  <li>✅ User links with partner (within 7 days)</li>
+</ul>
+
+<h3 id="engagement-metrics">Engagement Metrics</h3>
+<ul>
+  <li>✅ Daily active users (DAU)</li>
+  <li>✅ Notes added per week (target: 3+)</li>
+  <li>✅ Agendas generated per month (target: 4)</li>
+  <li>✅ Date ideas bookmarked (target: 2+ per month)</li>
+</ul>
+
+<h3 id="monetization-metrics">Monetization Metrics</h3>
+<ul>
+  <li>✅ Free trial conversion rate (target: 20%)</li>
+  <li>✅ Monthly subscription retention (target: 85%)</li>
+  <li>✅ Premium feature usage</li>
+  <li>✅ Lifetime value (LTV)</li>
+</ul>
+
+<hr />
+
+<h2 id="-design-principles">🎨 Design Principles</h2>
+
+<ol>
+  <li><strong>Simplicity First</strong> - Clear, uncluttered interface</li>
+  <li><strong>Emotional Safety</strong> - Supportive tone, crisis resources accessible</li>
+  <li><strong>Privacy-Focused</strong> - Private notes, partner-only sharing</li>
+  <li><strong>Actionable Insights</strong> - Coaching that leads to conversations</li>
+  <li><strong>Celebration</strong> - Acknowledge progress and milestones</li>
+</ol>
+
+<hr />
+
+<h2 id="-screen-inventory">📱 Screen Inventory</h2>
+
+<h3 id="onboarding-screens-6">Onboarding Screens (6)</h3>
+<ul>
+  <li>WelcomeScreen</li>
+  <li>SignUpScreen</li>
+  <li>SignInScreen</li>
+  <li>CoupleLinkingScreen</li>
+  <li>ProfileSetupScreen</li>
+  <li>HelpSupportScreen</li>
+</ul>
+
+<h3 id="main-app-screens-4-tabs--sub-screens">Main App Screens (4 tabs + sub-screens)</h3>
+<ul>
+  <li><strong>NotesScreen</strong> → AddNoteScreen</li>
+  <li><strong>AgendaScreen</strong> → AgendaDetailScreen</li>
+  <li><strong>DateIdeasScreen</strong> (3 tabs: For You, Browse, Trending)</li>
+  <li><strong>ProfileScreen</strong> → PaywallScreen, NotificationsScreen</li>
+</ul>
+
+<h3 id="utility-screens-2">Utility Screens (2)</h3>
+<ul>
+  <li>SplashScreen</li>
+  <li>LoadingOverlay (widget)</li>
+</ul>
+
+<hr />
+
+<h2 id="-state-management">🔄 State Management</h2>
+
+<ul>
+  <li><strong>AuthService</strong> - User authentication &amp; partner linking</li>
+  <li><strong>FirestoreService</strong> - Data operations (notes, agendas)</li>
+  <li><strong>SubscriptionService</strong> - Premium status &amp; features</li>
+  <li><strong>NotificationService</strong> - Push notifications &amp; reminders</li>
+</ul>
+
+<p>All services use <strong>Provider</strong> for state management.</p>
+
+<hr />
+
+<h2 id="-next-steps">📝 Next Steps</h2>
+
+<p>Read each journey document for detailed:</p>
+<ul>
+  <li>Step-by-step user flows</li>
+  <li>Screen transitions</li>
+  <li>Error states &amp; edge cases</li>
+  <li>Success criteria</li>
+  <li>Implementation notes</li>
+</ul>
+
+<hr />
+
+<p><strong>Last Updated</strong>: 2026-02-02
+<strong>Version</strong>: 1.0 (MVP+)</p>
+
+      </article>
+    
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-wrap">
+      <p class="footer-copy">
+        <picture class="footer-picture">
+          <source media="(prefers-color-scheme: dark)" srcset="/happie-couple-public/assets/logos/dark_mode_icon_noname.jpeg">
+          <img
+            class="footer-logo"
+            src="/happie-couple-public/assets/logos/light_mode_icon_noname.jpeg"
+            alt="Happie Couple logo"
+          >
+        </picture>
+        <span>© 2026 Happie Couple. Built for healthier conversations.</span>
+      </p>
+      <div class="footer-links">
+        <a href="/happie-couple-public/PRIVACY_POLICY">Privacy Policy</a>
+        <a href="/happie-couple-public/TERMS_OF_SERVICE">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

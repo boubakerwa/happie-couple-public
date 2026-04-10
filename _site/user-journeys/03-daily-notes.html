@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="03. Daily Notes Journey for Happie Couple.">
+  <meta name="theme-color" content="#f8f3fb">
+  <title>03. Daily Notes Journey | Happie Couple Legal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/jpeg" media="(prefers-color-scheme: light)" href="/happie-couple-public/assets/logos/light_mode_icon_noname.jpeg">
+  <link rel="icon" type="image/jpeg" media="(prefers-color-scheme: dark)" href="/happie-couple-public/assets/logos/dark_mode_icon_noname.jpeg">
+  <link rel="apple-touch-icon" href="/happie-couple-public/assets/logos/light_mode_icon_noname.jpeg">
+  <link rel="stylesheet" href="/happie-couple-public/assets/css/style.css">
+</head>
+<body>
+  <div class="bg-glow bg-glow-1"></div>
+  <div class="bg-glow bg-glow-2"></div>
+
+  <header class="site-header">
+    <div class="shell nav-wrap">
+      <a class="brand" href="/happie-couple-public/">
+        <picture class="brand-picture">
+          <source media="(prefers-color-scheme: dark)" srcset="/happie-couple-public/assets/logos/dark_mode_icon_noname.jpeg">
+          <img
+            class="brand-icon"
+            src="/happie-couple-public/assets/logos/light_mode_icon_noname.jpeg"
+            alt="Happie Couple logo"
+          >
+        </picture>
+        <span>Happie Couple</span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/happie-couple-public/">Home</a>
+        <a href="/happie-couple-public/PRIVACY_POLICY">Privacy</a>
+        <a href="/happie-couple-public/TERMS_OF_SERVICE">Terms</a>
+        <a href="mailto:support@happiecouple.app">Support</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="shell content-shell">
+    
+      <article class="panel prose">
+        <h1 id="03-daily-notes-journey">03. Daily Notes Journey</h1>
+
+<h2 id="overview">Overview</h2>
+
+<p>Daily notes are the <strong>core feature</strong> of Happie Couple. They form the foundation for all other features (agendas, insights, analytics). This journey must be frictionless and habitual.</p>
+
+<hr />
+
+<h2 id="user-goal">User Goal</h2>
+
+<p><strong>“I want to quickly capture a moment or feeling about my relationship.”</strong></p>
+
+<hr />
+
+<h2 id="entry-points">Entry Points</h2>
+
+<p>Users can start adding a note from multiple places:</p>
+
+<ol>
+  <li><strong>Notes Tab</strong> → Floating Action Button (+ icon)</li>
+  <li><strong>Notes Tab Empty State</strong> → “Add Your First Note” button</li>
+  <li><strong>Push Notification</strong> → “Time for your daily check-in” → Opens AddNoteScreen</li>
+  <li><strong>Date Ideas</strong> → “Save this date” → Can add note about it</li>
+</ol>
+
+<hr />
+
+<h2 id="journey-steps">Journey Steps</h2>
+
+<h3 id="step-1-user-taps-add-note">Step 1: User Taps “Add Note”</h3>
+
+<p><strong>From</strong>: Notes Tab
+<strong>Trigger</strong>: Tap FloatingActionButton or empty state CTA
+<strong>Navigate To</strong>: <code class="language-plaintext highlighter-rouge">AddNoteScreen</code></p>
+
+<p><strong>Screen Transition</strong>: Slide up animation (modal)</p>
+
+<hr />
+
+<h3 id="step-2-addnotescreen">Step 2: AddNoteScreen</h3>
+
+<p><strong>Screen</strong>: <code class="language-plaintext highlighter-rouge">lib/screens/notes/add_note_screen.dart</code></p>
+
+<p><strong>Form Fields</strong> (in order):</p>
+
+<h4 id="1-note-title-required">1. Note Title (Required)</h4>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>┌─────────────────────────────────┐
+│ Title                           │
+│ ┌─────────────────────────────┐ │
+│ │ e.g., "Date night at home"  │ │
+│ └─────────────────────────────┘ │
+└─────────────────────────────────┘
+</code></pre></div></div>
+<ul>
+  <li><strong>Type</strong>: Text input</li>
+  <li><strong>Validation</strong>: Required, 1-100 characters</li>
+  <li><strong>Placeholder</strong>: “What happened?”</li>
+</ul>
+
+<h4 id="2-note-content-required">2. Note Content (Required)</h4>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>┌─────────────────────────────────┐
+│ Note                            │
+│ ┌─────────────────────────────┐ │
+│ │ We cooked dinner together   │ │
+│ │ and watched our favorite    │ │
+│ │ show...                     │ │
+│ │                             │ │
+│ └─────────────────────────────┘ │
+└─────────────────────────────────┘
+</code></pre></div></div>
+<ul>
+  <li><strong>Type</strong>: Multiline text area</li>
+  <li><strong>Validation</strong>: Required, 10-5000 characters</li>
+  <li><strong>Placeholder</strong>: “Describe what happened and how you felt…”</li>
+  <li><strong>Height</strong>: Expands as user types</li>
+</ul>
+
+<h4 id="3-mood-score-required">3. Mood Score (Required)</h4>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>┌─────────────────────────────────┐
+│ How did you feel?               │
+│                                 │
+│    ☆  ☆  ☆  ★  ★               │
+│   Very sad   →   Very happy     │
+└─────────────────────────────────┘
+</code></pre></div></div>
+<ul>
+  <li><strong>Type</strong>: Star rating (1-5)</li>
+  <li><strong>Default</strong>: 3 (neutral)</li>
+  <li><strong>Visual</strong>: Interactive star icons</li>
+  <li><strong>Labels</strong>: “Very sad” (1 star) to “Very happy” (5 stars)</li>
+</ul>
+
+<h4 id="4-note-type-required">4. Note Type (Required)</h4>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>┌─────────────────────────────────┐
+│ Note Type                       │
+│                                 │
+│  [  Positive  ] [Negative] [Neutral]  │
+└─────────────────────────────────┘
+</code></pre></div></div>
+<ul>
+  <li><strong>Type</strong>: Segmented control / Button group</li>
+  <li><strong>Options</strong>:
+    <ul>
+      <li>😊 Positive (green)</li>
+      <li>😔 Negative (red)</li>
+      <li>😐 Neutral (gray)</li>
+    </ul>
+  </li>
+  <li><strong>Auto-suggest</strong>: Based on mood score (4-5 = Positive, 1-2 = Negative, 3 = Neutral)</li>
+</ul>
+
+<h4 id="5-privacy-level-required">5. Privacy Level (Required)</h4>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>┌─────────────────────────────────┐
+│ Who can see this?               │
+│                                 │
+│  ( ) Private (Only me)          │
+│  (•) Shared (Me + Partner)      │
+└─────────────────────────────────┘
+</code></pre></div></div>
+<ul>
+  <li><strong>Type</strong>: Radio buttons</li>
+  <li><strong>Default</strong>:
+    <ul>
+      <li>If partner linked: “Shared”</li>
+      <li>If no partner: “Private” (only option)</li>
+    </ul>
+  </li>
+  <li><strong>Important</strong>: Clearly communicate privacy level</li>
+</ul>
+
+<h4 id="6-tags-optional">6. Tags (Optional)</h4>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>┌─────────────────────────────────┐
+│ Tags (optional)                 │
+│ ┌─────────────────────────────┐ │
+│ │ communication, date-night    │ │
+│ └─────────────────────────────┘ │
+│                                 │
+│ Suggested: #quality-time #fun   │
+└─────────────────────────────────┘
+</code></pre></div></div>
+<ul>
+  <li><strong>Type</strong>: Tag input (comma-separated)</li>
+  <li><strong>Validation</strong>: Optional, max 5 tags</li>
+  <li><strong>Smart Suggestions</strong>: Based on content analysis</li>
+  <li><strong>Common Tags</strong>: communication, intimacy, conflict, fun, quality-time, appreciation</li>
+</ul>
+
+<hr />
+
+<h3 id="step-3-user-fills-form">Step 3: User Fills Form</h3>
+
+<p><strong>Typical Time</strong>: 2-5 minutes
+<strong>User Experience</strong>:</p>
+<ul>
+  <li>Auto-save draft every 30 seconds (future enhancement)</li>
+  <li>Can navigate away without losing progress</li>
+  <li>Form validation on field blur</li>
+</ul>
+
+<p><strong>Validation Feedback</strong>:</p>
+<ul>
+  <li>✅ Valid field → Green checkmark</li>
+  <li>❌ Invalid field → Red border + error message</li>
+  <li>⚠️ Missing required → “This field is required”</li>
+</ul>
+
+<hr />
+
+<h3 id="step-4-user-saves-note">Step 4: User Saves Note</h3>
+
+<p><strong>Trigger</strong>: Tap “Save Note” button</p>
+
+<p><strong>What Happens</strong>:</p>
+<ol>
+  <li><strong>Validate All Fields</strong>
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if </span><span class="p">(</span><span class="nx">title</span><span class="p">.</span><span class="nx">isEmpty</span><span class="p">)</span> <span class="err">→</span> <span class="nx">Show</span> <span class="nx">error</span>
+<span class="k">if </span><span class="p">(</span><span class="nx">content</span><span class="p">.</span><span class="nx">length</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">)</span> <span class="err">→</span> <span class="nx">Show</span> <span class="nx">error</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Add more detail</span><span class="dl">"</span>
+<span class="k">if </span><span class="p">(</span><span class="nx">moodScore</span> <span class="o">==</span> <span class="kc">null</span><span class="p">)</span> <span class="err">→</span> <span class="nx">Show</span> <span class="nx">error</span>
+</code></pre></div>    </div>
+  </li>
+  <li><strong>Save to Firestore</strong>
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Creating NoteModel object
+    ↓
+Call FirestoreService.saveNote()
+    ↓
+Upload to Firestore (/notes/{noteId})
+    ↓
+Success!
+</code></pre></div>    </div>
+  </li>
+  <li><strong>Post-Save Actions</strong>
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>If note is "Shared" + partner linked:
+    ↓
+Send notification to partner
+    ↓
+"💕 Your partner shared something positive!"
+</code></pre></div>    </div>
+  </li>
+  <li><strong>Navigate Back</strong>
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Dismiss AddNoteScreen
+    ↓
+Return to NotesScreen
+    ↓
+New note appears at top of list
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<p><strong>Success Indicators</strong>:</p>
+<ul>
+  <li>✅ Snackbar: “Note saved successfully!”</li>
+  <li>🎊 First note: “🎉 Great start! Keep it up!”</li>
+  <li>↩️ Smooth transition back to list</li>
+</ul>
+
+<p><strong>Loading State</strong>:</p>
+<ul>
+  <li>Show spinner on “Save” button</li>
+  <li>Disable form inputs</li>
+  <li>Message: “Saving…”</li>
+</ul>
+
+<hr />
+
+<h3 id="step-5-view-saved-notes">Step 5: View Saved Notes</h3>
+
+<p><strong>Screen</strong>: <code class="language-plaintext highlighter-rouge">NotesScreen</code></p>
+
+<p><strong>Layout</strong>: List of notes, newest first</p>
+
+<p><strong>Each Note Card Shows</strong>:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>┌─────────────────────────────────────┐
+│  😊 Date night at home              │
+│  ★★★★★ | Positive | 2 hours ago    │
+│                                     │
+│  We cooked dinner together and      │
+│  watched our favorite show...       │
+│                                     │
+│  🏷️ date-night, quality-time        │
+│  🔒 Private                         │
+└─────────────────────────────────────┘
+</code></pre></div></div>
+
+<p><strong>Elements</strong>:</p>
+<ul>
+  <li><strong>Emoji</strong>: Based on note type (😊/😔/😐)</li>
+  <li><strong>Title</strong>: Bold, 16px</li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td><strong>Metadata Line</strong>: Mood</td>
+          <td>Type</td>
+          <td>Time ago</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li><strong>Content Preview</strong>: First 2 lines</li>
+  <li><strong>Tags</strong>: Clickable tag chips</li>
+  <li><strong>Privacy Icon</strong>: 🔒 Private or 👥 Shared</li>
+</ul>
+
+<p><strong>Interactions</strong>:</p>
+<ul>
+  <li><strong>Tap card</strong> → View full note detail</li>
+  <li><strong>Long press</strong> → Options menu (Edit, Delete, Share)</li>
+  <li><strong>Swipe left</strong> → Delete (with confirmation)</li>
+</ul>
+
+<hr />
+
+<h3 id="step-6-filtering--search">Step 6: Filtering &amp; Search</h3>
+
+<p><strong>Filter Options</strong> (top of NotesScreen):</p>
+
+<ol>
+  <li><strong>By Tab</strong> (if partner linked):
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[ All ] [ Mine ] [ Partner's ]
+</code></pre></div>    </div>
+  </li>
+  <li><strong>By Type</strong> (dropdown):
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[ All Notes ▼ ]
+├─ All Notes
+├─ Positive Only
+└─ Negative Only
+</code></pre></div>    </div>
+  </li>
+  <li><strong>Search</strong> (icon button):
+    <ul>
+      <li>Opens search dialog</li>
+      <li>Searches title, content, tags</li>
+      <li>Real-time results as user types</li>
+    </ul>
+  </li>
+</ol>
+
+<hr />
+
+<h2 id="success-patterns">Success Patterns</h2>
+
+<h3 id="habit-formation">Habit Formation:</h3>
+
+<p><strong>Goal</strong>: User adds notes regularly (3+ per week)</p>
+
+<p><strong>Strategies</strong>:</p>
+
+<ol>
+  <li><strong>Daily Reminder Notification</strong>
+    <ul>
+      <li>Time: 7 PM (user configurable)</li>
+      <li>Message: “Time for your daily check-in 💕”</li>
+      <li>Tap → Opens AddNoteScreen</li>
+    </ul>
+  </li>
+  <li><strong>Streak Tracking</strong> (future)
+    <ul>
+      <li>“You’ve added notes for 7 days in a row! 🔥”</li>
+      <li>Gamification to maintain habit</li>
+    </ul>
+  </li>
+  <li><strong>Low-Friction Entry</strong>
+    <ul>
+      <li>FAB always visible in Notes tab</li>
+      <li>Quick access from notifications</li>
+      <li>Auto-suggestions to reduce thinking</li>
+    </ul>
+  </li>
+  <li><strong>Positive Reinforcement</strong>
+    <ul>
+      <li>Encourage after each note</li>
+      <li>Weekly summary: “You added 5 notes this week!”</li>
+    </ul>
+  </li>
+</ol>
+
+<hr />
+
+<h2 id="edge-cases--error-handling">Edge Cases &amp; Error Handling</h2>
+
+<h3 id="1-network-offline">1. Network Offline</h3>
+<p><strong>Scenario</strong>: User saves note without internet</p>
+
+<p><strong>Handling</strong>:</p>
+<ul>
+  <li>Save to local storage (SQLite/Hive)</li>
+  <li>Show indicator: “Saved locally. Will sync when online.”</li>
+  <li>Auto-sync when connection restored</li>
+  <li>Don’t block user from continuing</li>
+</ul>
+
+<h3 id="2-very-long-content">2. Very Long Content</h3>
+<p><strong>Scenario</strong>: User writes 10,000 character note</p>
+
+<p><strong>Handling</strong>:</p>
+<ul>
+  <li>Firestore limit: Check before save</li>
+  <li>Show warning at 4,500 chars: “Note is getting long. Consider splitting.”</li>
+  <li>Hard limit at 5,000: “Maximum length reached”</li>
+</ul>
+
+<h3 id="3-inappropriate-content">3. Inappropriate Content</h3>
+<p><strong>Scenario</strong>: User writes harmful content (self-harm, abuse)</p>
+
+<p><strong>Handling</strong> (future enhancement):</p>
+<ul>
+  <li>Content moderation AI</li>
+  <li>Detect crisis keywords</li>
+  <li>Show: “We noticed your note mentions difficult topics. Would you like crisis resources?”</li>
+  <li>Link to HelpSupportScreen</li>
+</ul>
+
+<h3 id="4-accidental-delete">4. Accidental Delete</h3>
+<p><strong>Scenario</strong>: User swipes to delete by mistake</p>
+
+<p><strong>Handling</strong>:</p>
+<ul>
+  <li>Confirmation dialog: “Delete this note?”</li>
+  <li>Options: [Cancel] [Delete]</li>
+  <li>After delete: Snackbar with “Undo” button (5 seconds)</li>
+</ul>
+
+<hr />
+
+<h2 id="analytics-events">Analytics Events</h2>
+
+<p>Track these events for understanding usage:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Event: note_creation_started</span>
+<span class="p">{</span>
+  <span class="nl">source</span><span class="p">:</span> <span class="dl">'</span><span class="s1">fab</span><span class="dl">'</span> <span class="o">|</span> <span class="dl">'</span><span class="s1">empty_state</span><span class="dl">'</span> <span class="o">|</span> <span class="dl">'</span><span class="s1">notification</span><span class="dl">'</span><span class="p">,</span>
+  <span class="nx">has_partner</span><span class="p">:</span> <span class="nx">boolean</span><span class="p">,</span>
+  <span class="nx">user_note_count</span><span class="p">:</span> <span class="nx">number</span>
+<span class="p">}</span>
+
+<span class="c1">// Event: note_saved</span>
+<span class="p">{</span>
+  <span class="na">note_type</span><span class="p">:</span> <span class="dl">'</span><span class="s1">positive</span><span class="dl">'</span> <span class="o">|</span> <span class="dl">'</span><span class="s1">negative</span><span class="dl">'</span> <span class="o">|</span> <span class="dl">'</span><span class="s1">neutral</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">mood_score</span><span class="p">:</span> <span class="mi">1</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span>
+  <span class="na">privacy_level</span><span class="p">:</span> <span class="dl">'</span><span class="s1">private</span><span class="dl">'</span> <span class="o">|</span> <span class="dl">'</span><span class="s1">shared</span><span class="dl">'</span><span class="p">,</span>
+  <span class="na">char_count</span><span class="p">:</span> <span class="nx">number</span><span class="p">,</span>
+  <span class="na">tags_count</span><span class="p">:</span> <span class="nx">number</span><span class="p">,</span>
+  <span class="na">time_to_complete</span><span class="p">:</span> <span class="nx">seconds</span>
+<span class="p">}</span>
+
+<span class="c1">// Event: note_viewed</span>
+<span class="p">{</span>
+  <span class="na">is_own_note</span><span class="p">:</span> <span class="nx">boolean</span><span class="p">,</span>
+  <span class="na">note_age_days</span><span class="p">:</span> <span class="nx">number</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="performance-considerations">Performance Considerations</h2>
+
+<h3 id="loading-notes-list">Loading Notes List:</h3>
+
+<p><strong>Challenge</strong>: User has 1000+ notes</p>
+
+<p><strong>Solution</strong>:</p>
+<ul>
+  <li>Firestore query with <code class="language-plaintext highlighter-rouge">.limit(50)</code></li>
+  <li>Pagination: Load more on scroll</li>
+  <li>Index on <code class="language-plaintext highlighter-rouge">noteDate</code> for fast sorting</li>
+  <li>Cache recent notes locally</li>
+</ul>
+
+<h3 id="image-support-future">Image Support (Future):</h3>
+
+<p><strong>Challenge</strong>: Photos in notes increase size</p>
+
+<p><strong>Solution</strong>:</p>
+<ul>
+  <li>Use Firebase Storage for images</li>
+  <li>Store image URLs in note document</li>
+  <li>Lazy load images in list view</li>
+  <li>Compress images before upload</li>
+</ul>
+
+<hr />
+
+<h2 id="user-feedback-insights">User Feedback Insights</h2>
+
+<h3 id="what-users-love">What Users Love:</h3>
+<ul>
+  <li>✅ “So simple to add a note”</li>
+  <li>✅ “Love seeing patterns in my moods”</li>
+  <li>✅ “Sharing with partner brings us closer”</li>
+</ul>
+
+<h3 id="improvement-requests">Improvement Requests:</h3>
+<ul>
+  <li>🔧 Voice input for notes (dictation)</li>
+  <li>🔧 Add photos to notes</li>
+  <li>🔧 Export notes as PDF</li>
+  <li>🔧 Reminder to review old notes</li>
+</ul>
+
+<hr />
+
+<h2 id="files-involved">Files Involved</h2>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">lib/screens/notes/notes_screen.dart</code></li>
+  <li><code class="language-plaintext highlighter-rouge">lib/screens/notes/add_note_screen.dart</code></li>
+  <li><code class="language-plaintext highlighter-rouge">lib/services/firestore_service.dart</code></li>
+  <li><code class="language-plaintext highlighter-rouge">lib/models/note_model.dart</code></li>
+  <li><code class="language-plaintext highlighter-rouge">lib/widgets/note_card.dart</code></li>
+</ul>
+
+<hr />
+
+<p><strong>Next Journey</strong>: <a href="04-weekly-coaching.md">04. Weekly Coaching</a></p>
+
+      </article>
+    
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-wrap">
+      <p class="footer-copy">
+        <picture class="footer-picture">
+          <source media="(prefers-color-scheme: dark)" srcset="/happie-couple-public/assets/logos/dark_mode_icon_noname.jpeg">
+          <img
+            class="footer-logo"
+            src="/happie-couple-public/assets/logos/light_mode_icon_noname.jpeg"
+            alt="Happie Couple logo"
+          >
+        </picture>
+        <span>© 2026 Happie Couple. Built for healthier conversations.</span>
+      </p>
+      <div class="footer-links">
+        <a href="/happie-couple-public/PRIVACY_POLICY">Privacy Policy</a>
+        <a href="/happie-couple-public/TERMS_OF_SERVICE">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

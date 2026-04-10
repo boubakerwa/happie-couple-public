@@ -6,20 +6,27 @@ home: true
 ---
 
 <section class="hero">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="{{ '/assets/logos/dark_mode_icon_name.jpeg' | relative_url }}">
-    <img
-      class="hero-logo"
-      src="{{ '/assets/logos/light_mode_icon_name.jpeg' | relative_url }}"
-      alt="Happie Couple logo wordmark"
-    >
-  </picture>
-  <p class="kicker">Official Resources</p>
-  <h1>Happie Couple Legal and Support</h1>
-  <p>Find everything you need in one place: Privacy Policy, Terms of Service, and direct support contacts for account, billing, and data questions.</p>
-  <div class="cta-row">
-    <a class="btn btn-primary" href="{{ '/PRIVACY_POLICY' | relative_url }}">Read Privacy Policy</a>
-    <a class="btn btn-secondary" href="{{ '/TERMS_OF_SERVICE' | relative_url }}">Read Terms of Service</a>
+  <div class="hero-grid">
+    <div class="hero-copy">
+      <p class="kicker">Official Legal Resources</p>
+      <h1>Happie Couple Legal and Support</h1>
+      <p class="hero-lead">A gentle relationship growth app for couples to capture daily moments, share private and shared notes, and turn weekly reflection into stronger conversations.</p>
+      <p>Find everything you need in one place: Privacy Policy, Terms of Service, and direct support contacts for account, billing, and data questions.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="{{ '/PRIVACY_POLICY' | relative_url }}">Read Privacy Policy</a>
+        <a class="btn btn-secondary" href="{{ '/TERMS_OF_SERVICE' | relative_url }}">Read Terms of Service</a>
+      </div>
+    </div>
+    <div class="hero-image">
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="{{ '/assets/logos/dark_mode_icon_name.jpeg' | relative_url }}">
+        <img
+          class="hero-logo"
+          src="{{ '/assets/logos/light_mode_icon_name.jpeg' | relative_url }}"
+          alt="Happie Couple logo wordmark"
+        >
+      </picture>
+    </div>
   </div>
 </section>
 

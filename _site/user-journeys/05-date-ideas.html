@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="05. Date Ideas Journey for Happie Couple.">
+  <meta name="theme-color" content="#f8f3fb">
+  <title>05. Date Ideas Journey | Happie Couple Legal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/jpeg" media="(prefers-color-scheme: light)" href="/happie-couple-public/assets/logos/light_mode_icon_noname.jpeg">
+  <link rel="icon" type="image/jpeg" media="(prefers-color-scheme: dark)" href="/happie-couple-public/assets/logos/dark_mode_icon_noname.jpeg">
+  <link rel="apple-touch-icon" href="/happie-couple-public/assets/logos/light_mode_icon_noname.jpeg">
+  <link rel="stylesheet" href="/happie-couple-public/assets/css/style.css">
+</head>
+<body>
+  <div class="bg-glow bg-glow-1"></div>
+  <div class="bg-glow bg-glow-2"></div>
+
+  <header class="site-header">
+    <div class="shell nav-wrap">
+      <a class="brand" href="/happie-couple-public/">
+        <picture class="brand-picture">
+          <source media="(prefers-color-scheme: dark)" srcset="/happie-couple-public/assets/logos/dark_mode_icon_noname.jpeg">
+          <img
+            class="brand-icon"
+            src="/happie-couple-public/assets/logos/light_mode_icon_noname.jpeg"
+            alt="Happie Couple logo"
+          >
+        </picture>
+        <span>Happie Couple</span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/happie-couple-public/">Home</a>
+        <a href="/happie-couple-public/PRIVACY_POLICY">Privacy</a>
+        <a href="/happie-couple-public/TERMS_OF_SERVICE">Terms</a>
+        <a href="mailto:support@happiecouple.app">Support</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="shell content-shell">
+    
+      <article class="panel prose">
+        <h1 id="05-date-ideas-journey">05. Date Ideas Journey</h1>
+
+<h2 id="overview">Overview</h2>
+
+<p>Date Ideas helps users discover, save, schedule, and complete date activities with personalization and lightweight gamification.</p>
+
+<h2 id="current-implementation-shippable-v1">Current Implementation (Shippable V1)</h2>
+
+<p><strong>Last updated</strong>: February 8, 2026</p>
+
+<h3 id="ux-in-production">UX in production</h3>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">DateIdeasScreen</code> with 3 tabs:
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">For You</code></li>
+      <li><code class="language-plaintext highlighter-rouge">Browse</code></li>
+      <li><code class="language-plaintext highlighter-rouge">Trending</code></li>
+    </ul>
+  </li>
+  <li>Search + filters:
+    <ul>
+      <li>keyword</li>
+      <li>category</li>
+      <li>budget</li>
+      <li>city</li>
+      <li>indoor/outdoor/mixed</li>
+      <li>radius (when user/couple coordinates exist)</li>
+    </ul>
+  </li>
+  <li>Save/unsave from cards and detail sheet</li>
+  <li>Schedule via calendar flow (<code class="language-plaintext highlighter-rouge">CreateEventScreen</code>) with source metadata</li>
+  <li>Complete flow with rating + optional feedback</li>
+  <li>Dedicated history screens:
+    <ul>
+      <li><code class="language-plaintext highlighter-rouge">SavedDateIdeasScreen</code></li>
+      <li><code class="language-plaintext highlighter-rouge">CompletedDateIdeasScreen</code></li>
+    </ul>
+  </li>
+  <li>Gamification widgets:
+    <ul>
+      <li>streaks</li>
+      <li>badges</li>
+      <li>monthly challenge</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="data--ranking-flow">Data + ranking flow</h3>
+
+<ol>
+  <li>Client requests ideas through <code class="language-plaintext highlighter-rouge">DateIdeasRepository</code>.</li>
+  <li>Repository reads couple-specific ideas from <code class="language-plaintext highlighter-rouge">date_ideas</code> (if available).</li>
+  <li>If empty, repository reads global catalog from <code class="language-plaintext highlighter-rouge">date_ideas_catalog</code>.</li>
+  <li>Results are filtered and ranked client-side using user/couple signals.</li>
+  <li>If available, Cloud Function <code class="language-plaintext highlighter-rouge">recommendDateIdeas</code> server ranking is merged.</li>
+</ol>
+
+<h2 id="firestore-collections-used">Firestore Collections Used</h2>
+
+<h3 id="catalog--recommendation-inputs">Catalog + recommendation inputs</h3>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">date_ideas_catalog</code> (global read-only catalog for clients)</li>
+  <li><code class="language-plaintext highlighter-rouge">date_ideas</code> (optional couple-specific ideas)</li>
+</ul>
+
+<h3 id="user-actions">User actions</h3>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">date_idea_saves</code></li>
+  <li><code class="language-plaintext highlighter-rouge">date_idea_interactions</code></li>
+  <li><code class="language-plaintext highlighter-rouge">date_idea_actions</code></li>
+</ul>
+
+<h3 id="related-domain-collections">Related domain collections</h3>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">calendar_events</code> (scheduled dates)</li>
+  <li><code class="language-plaintext highlighter-rouge">users</code>, <code class="language-plaintext highlighter-rouge">couples</code> (preferences + coordinates used by ranking)</li>
+</ul>
+
+<h2 id="catalog-schema-current">Catalog Schema (Current)</h2>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"adventure|romantic|cozy|cultural|outdoor|food|active|creative|entertainment"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"budget"</span><span class="p">:</span><span class="w"> </span><span class="s2">"free|low|medium|high"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"duration"</span><span class="p">:</span><span class="w"> </span><span class="s2">"short|medium|long|fullDay"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"tags"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"string"</span><span class="p">],</span><span class="w">
+  </span><span class="nl">"location"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string|null"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string|null"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"region"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string|null"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"indoor_outdoor"</span><span class="p">:</span><span class="w"> </span><span class="s2">"indoor|outdoor|mixed|null"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"season"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"spring|summer|fall|winter|all-season"</span><span class="p">],</span><span class="w">
+  </span><span class="nl">"price_range"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string|null"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"latitude"</span><span class="p">:</span><span class="w"> </span><span class="s2">"number|null"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"longitude"</span><span class="p">:</span><span class="w"> </span><span class="s2">"number|null"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"rating"</span><span class="p">:</span><span class="w"> </span><span class="s2">"number|null"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"reviewCount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"number"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"isActive"</span><span class="p">:</span><span class="w"> </span><span class="s2">"boolean"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"createdAt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"timestamp"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h2 id="operations-model">Operations Model</h2>
+
+<ul>
+  <li>Global catalog seeding is backend-only.</li>
+  <li>Seeding was executed as a one-time production operation on <strong>February 8, 2026</strong>.</li>
+  <li>End users have no in-app seed/import tooling.</li>
+  <li>Temporary seeding endpoint has been removed from deployed functions.</li>
+</ul>
+
+<h2 id="security-model">Security Model</h2>
+
+<p>From <code class="language-plaintext highlighter-rouge">firestore.rules</code>:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">date_ideas_catalog</code>: signed-in read only</li>
+  <li><code class="language-plaintext highlighter-rouge">date_idea_saves</code>: owner read/write</li>
+  <li><code class="language-plaintext highlighter-rouge">date_idea_interactions</code>: owner create/read, immutable</li>
+  <li><code class="language-plaintext highlighter-rouge">date_idea_actions</code>: owner create/read, immutable</li>
+</ul>
+
+<h2 id="files-involved">Files Involved</h2>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">lib/screens/date_ideas_screen.dart</code></li>
+  <li><code class="language-plaintext highlighter-rouge">lib/screens/date_ideas/saved_date_ideas_screen.dart</code></li>
+  <li><code class="language-plaintext highlighter-rouge">lib/screens/date_ideas/completed_date_ideas_screen.dart</code></li>
+  <li><code class="language-plaintext highlighter-rouge">lib/models/date_idea_model.dart</code></li>
+  <li><code class="language-plaintext highlighter-rouge">lib/services/date_ideas_repository.dart</code></li>
+  <li><code class="language-plaintext highlighter-rouge">functions/src/dateIdeas.ts</code></li>
+  <li><code class="language-plaintext highlighter-rouge">functions/src/index.ts</code></li>
+  <li><code class="language-plaintext highlighter-rouge">firestore.rules</code></li>
+  <li><code class="language-plaintext highlighter-rouge">firestore.indexes.json</code></li>
+</ul>
+
+<h2 id="next-milestones">Next Milestones</h2>
+
+<ol>
+  <li>Replace heuristic trending with event-aggregated metrics from backend.</li>
+  <li>Add admin-managed catalog tooling (create/edit/archive).</li>
+  <li>Add localization-aware candidate generation (language + country/city scope).</li>
+  <li>Introduce recommendation observability (coverage, CTR, save-rate, completion-rate).</li>
+</ol>
+
+<hr />
+
+<p><strong>Next Journey</strong>: <a href="06-subscription.md">06. Subscription</a></p>
+
+      </article>
+    
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-wrap">
+      <p class="footer-copy">
+        <picture class="footer-picture">
+          <source media="(prefers-color-scheme: dark)" srcset="/happie-couple-public/assets/logos/dark_mode_icon_noname.jpeg">
+          <img
+            class="footer-logo"
+            src="/happie-couple-public/assets/logos/light_mode_icon_noname.jpeg"
+            alt="Happie Couple logo"
+          >
+        </picture>
+        <span>© 2026 Happie Couple. Built for healthier conversations.</span>
+      </p>
+      <div class="footer-links">
+        <a href="/happie-couple-public/PRIVACY_POLICY">Privacy Policy</a>
+        <a href="/happie-couple-public/TERMS_OF_SERVICE">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

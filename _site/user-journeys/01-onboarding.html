@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="01. Onboarding & Sign Up Journey for Happie Couple.">
+  <meta name="theme-color" content="#f8f3fb">
+  <title>01. Onboarding & Sign Up Journey | Happie Couple Legal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/jpeg" media="(prefers-color-scheme: light)" href="/happie-couple-public/assets/logos/light_mode_icon_noname.jpeg">
+  <link rel="icon" type="image/jpeg" media="(prefers-color-scheme: dark)" href="/happie-couple-public/assets/logos/dark_mode_icon_noname.jpeg">
+  <link rel="apple-touch-icon" href="/happie-couple-public/assets/logos/light_mode_icon_noname.jpeg">
+  <link rel="stylesheet" href="/happie-couple-public/assets/css/style.css">
+</head>
+<body>
+  <div class="bg-glow bg-glow-1"></div>
+  <div class="bg-glow bg-glow-2"></div>
+
+  <header class="site-header">
+    <div class="shell nav-wrap">
+      <a class="brand" href="/happie-couple-public/">
+        <picture class="brand-picture">
+          <source media="(prefers-color-scheme: dark)" srcset="/happie-couple-public/assets/logos/dark_mode_icon_noname.jpeg">
+          <img
+            class="brand-icon"
+            src="/happie-couple-public/assets/logos/light_mode_icon_noname.jpeg"
+            alt="Happie Couple logo"
+          >
+        </picture>
+        <span>Happie Couple</span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="/happie-couple-public/">Home</a>
+        <a href="/happie-couple-public/PRIVACY_POLICY">Privacy</a>
+        <a href="/happie-couple-public/TERMS_OF_SERVICE">Terms</a>
+        <a href="mailto:support@happiecouple.app">Support</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="shell content-shell">
+    
+      <article class="panel prose">
+        <h1 id="01-onboarding--sign-up-journey">01. Onboarding &amp; Sign Up Journey</h1>
+
+<h2 id="overview">Overview</h2>
+
+<p>The onboarding journey is the critical first impression that converts downloads into active users. It establishes the app’s value proposition and guides users to their first meaningful action.</p>
+
+<hr />
+
+<h2 id="user-goal">User Goal</h2>
+
+<p><strong>“I want to start using Happie Couple to improve my relationship.”</strong></p>
+
+<hr />
+
+<h2 id="journey-steps">Journey Steps</h2>
+
+<h3 id="step-1-app-launch--splash-screen">Step 1: App Launch → Splash Screen</h3>
+
+<p><strong>Screen</strong>: <code class="language-plaintext highlighter-rouge">SplashScreen</code></p>
+
+<p><strong>What Happens</strong>:</p>
+<ul>
+  <li>App logo displays (1-2 seconds)</li>
+  <li>Firebase initializes in background</li>
+  <li>NotificationService initializes</li>
+  <li>SubscriptionService loads saved state</li>
+  <li>AuthService checks if user is already logged in</li>
+</ul>
+
+<p><strong>Transitions</strong>:</p>
+<ul>
+  <li>✅ User is logged in → Navigate to <strong>HomeScreen</strong></li>
+  <li>❌ User not logged in → Navigate to <strong>WelcomeScreen</strong></li>
+</ul>
+
+<hr />
+
+<h3 id="step-2-welcome-screen">Step 2: Welcome Screen</h3>
+
+<p><strong>Screen</strong>: <code class="language-plaintext highlighter-rouge">WelcomeScreen</code></p>
+
+<p><strong>Content Displayed</strong>:</p>
+<ul>
+  <li>App logo/icon (heart symbol)</li>
+  <li>Headline: “Welcome to Happie Couple”</li>
+  <li>Subtitle: “Strengthen your relationship with daily notes, weekly coaching sessions, and personalized insights.”</li>
+  <li>3 Feature highlights:
+    <ul>
+      <li>📝 Daily Notes - Track your relationship moments</li>
+      <li>📅 Weekly Coaching - Get personalized agenda for discussions</li>
+      <li>💡 Smart Insights - Discover patterns and growth opportunities</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>Call-to-Actions</strong>:</p>
+<ol>
+  <li><strong>Primary</strong>: “Get Started” button → <strong>SignUpScreen</strong></li>
+  <li><strong>Secondary</strong>: “I already have an account” link → <strong>SignInScreen</strong></li>
+  <li><strong>Support</strong>: “Help &amp; Crisis Resources” link → <strong>HelpSupportScreen</strong></li>
+</ol>
+
+<p><strong>Legal Disclaimer</strong> (bottom):</p>
+<blockquote>
+  <p>“This is a relationship coaching tool, not a substitute for professional therapy.”</p>
+</blockquote>
+
+<p><strong>User Decision Point</strong>:</p>
+<ul>
+  <li>New user → Click “Get Started”</li>
+  <li>Returning user → Click “I already have an account”</li>
+  <li>Concerned user → Click “Help &amp; Crisis Resources”</li>
+</ul>
+
+<hr />
+
+<h3 id="step-3a-sign-up-new-users">Step 3A: Sign Up (New Users)</h3>
+
+<p><strong>Screen</strong>: <code class="language-plaintext highlighter-rouge">SignUpScreen</code></p>
+
+<p><strong>Form Fields</strong>:</p>
+<ol>
+  <li><strong>Name</strong> (text input)
+    <ul>
+      <li>Placeholder: “Your name”</li>
+      <li>Validation: Required, 2-50 characters</li>
+    </ul>
+  </li>
+  <li><strong>Email</strong> (email input)
+    <ul>
+      <li>Placeholder: “your@email.com”</li>
+      <li>Validation: Valid email format, RFC-compliant regex</li>
+      <li>Error: “Please enter a valid email address”</li>
+    </ul>
+  </li>
+  <li><strong>Password</strong> (password input)
+    <ul>
+      <li>Placeholder: “Choose a secure password”</li>
+      <li>Validation: Minimum 6 characters</li>
+      <li>Show/hide password toggle</li>
+    </ul>
+  </li>
+</ol>
+
+<p><strong>Call-to-Action</strong>:</p>
+<ul>
+  <li><strong>Primary</strong>: “Create Account” button</li>
+  <li><strong>Secondary</strong>: “Already have an account? Sign In” link</li>
+</ul>
+
+<p><strong>What Happens on Submit</strong>:</p>
+<ol>
+  <li>Validate form inputs</li>
+  <li>Show loading indicator</li>
+  <li>Call <code class="language-plaintext highlighter-rouge">AuthService.signUpWithEmailAndPassword()</code></li>
+  <li>Create user document in Firestore</li>
+  <li>Initialize user preferences</li>
+</ol>
+
+<p><strong>Success Path</strong>:</p>
+<ul>
+  <li>✅ Account created → Navigate to <strong>HomeScreen</strong></li>
+  <li>🎉 Show welcome message: “Welcome to Happie Couple!”</li>
+  <li>📱 Request notification permissions (iOS prompt)</li>
+</ul>
+
+<p><strong>Error Paths</strong>:</p>
+<ul>
+  <li>❌ Email already in use → Show error: “This email is already registered”</li>
+  <li>❌ Weak password → Show error: “Password must be at least 6 characters”</li>
+  <li>❌ Network error → Show error: “Connection failed. Please try again.”</li>
+</ul>
+
+<hr />
+
+<h3 id="step-3b-sign-in-returning-users">Step 3B: Sign In (Returning Users)</h3>
+
+<p><strong>Screen</strong>: <code class="language-plaintext highlighter-rouge">SignInScreen</code></p>
+
+<p><strong>Form Fields</strong>:</p>
+<ol>
+  <li><strong>Email</strong> (email input)</li>
+  <li><strong>Password</strong> (password input)</li>
+</ol>
+
+<p><strong>Call-to-Action</strong>:</p>
+<ul>
+  <li><strong>Primary</strong>: “Sign In” button</li>
+  <li><strong>Secondary</strong>: “Forgot Password?” link (TODO: implement)</li>
+  <li><strong>Tertiary</strong>: “Don’t have an account? Sign Up” link</li>
+</ul>
+
+<p><strong>What Happens on Submit</strong>:</p>
+<ol>
+  <li>Validate inputs</li>
+  <li>Call <code class="language-plaintext highlighter-rouge">AuthService.signInWithEmailAndPassword()</code></li>
+  <li>Load user data from Firestore</li>
+</ol>
+
+<p><strong>Success Path</strong>:</p>
+<ul>
+  <li>✅ Credentials valid → Navigate to <strong>HomeScreen</strong></li>
+  <li>🔄 Load user’s existing notes, agendas, etc.</li>
+</ul>
+
+<p><strong>Error Paths</strong>:</p>
+<ul>
+  <li>❌ Invalid credentials → Show error: “Invalid email or password”</li>
+  <li>❌ Network error → Show error: “Connection failed. Please try again.”</li>
+</ul>
+
+<hr />
+
+<h3 id="step-4-first-landing-on-home-screen">Step 4: First Landing on Home Screen</h3>
+
+<p><strong>Screen</strong>: <code class="language-plaintext highlighter-rouge">HomeScreen</code></p>
+
+<p><strong>What User Sees</strong>:</p>
+<ul>
+  <li>4-tab bottom navigation (Notes, Agenda, Date Ideas, Profile)</li>
+  <li>Default tab: <strong>Notes</strong></li>
+  <li>Empty state in Notes tab:
+    <ul>
+      <li>Icon: Note add icon</li>
+      <li>Message: “No notes yet”</li>
+      <li>Subtext: “Start documenting your relationship journey”</li>
+      <li>CTA: “Add Your First Note” button</li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>User’s First Actions</strong> (typical):</p>
+<ol>
+  <li>Browse tabs to explore app</li>
+  <li>Check Profile tab to see their info</li>
+  <li>Add first note (encouraged by empty state)</li>
+</ol>
+
+<hr />
+
+<h3 id="step-5-first-note-creation-activation-moment">Step 5: First Note Creation (Activation Moment)</h3>
+
+<p><strong>Trigger</strong>: User taps “Add Your First Note” or FloatingActionButton</p>
+
+<p><strong>Screen</strong>: <code class="language-plaintext highlighter-rouge">AddNoteScreen</code></p>
+
+<p><strong>What User Does</strong>:</p>
+<ol>
+  <li>Enter note title</li>
+  <li>Write note content</li>
+  <li>Select mood (1-5 stars)</li>
+  <li>Choose note type (Positive/Negative/Neutral)</li>
+  <li>Set privacy level (Private/Shared with partner)</li>
+  <li>Add optional tags</li>
+</ol>
+
+<p><strong>Success</strong>:</p>
+<ul>
+  <li>✅ Note saved to Firestore</li>
+  <li>📱 Show success message</li>
+  <li>🎊 Optional: Trigger encouragement notification later</li>
+  <li>↩️ Navigate back to Notes list</li>
+</ul>
+
+<p><strong>This is the KEY ACTIVATION MOMENT</strong> - User has created value in the app!</p>
+
+<hr />
+
+<h3 id="step-6-post-activation-experience">Step 6: Post-Activation Experience</h3>
+
+<p><strong>Next Suggested Actions</strong>:</p>
+
+<ol>
+  <li><strong>Link with Partner</strong> (High Priority)
+    <ul>
+      <li>Show card in Profile: “Link with your partner to share insights”</li>
+      <li>Benefit: Unlock couple features</li>
+    </ul>
+  </li>
+  <li><strong>Set Up Notifications</strong> (Medium Priority)
+    <ul>
+      <li>Prompt: “Want daily reminders to add notes?”</li>
+      <li>Navigate to NotificationsScreen</li>
+    </ul>
+  </li>
+  <li><strong>Explore Premium</strong> (Low Priority - Don’t Pressure)
+    <ul>
+      <li>Show Premium card in Profile</li>
+      <li>Soft sell: “Upgrade to unlock unlimited AI insights”</li>
+    </ul>
+  </li>
+</ol>
+
+<hr />
+
+<h2 id="success-metrics">Success Metrics</h2>
+
+<h3 id="critical-onboarding-metrics">Critical Onboarding Metrics:</h3>
+
+<ol>
+  <li><strong>Sign Up Completion Rate</strong>
+    <ul>
+      <li>Target: &gt;80% of users who start sign up complete it</li>
+      <li>Measure: (Accounts Created / Sign Up Started)</li>
+    </ul>
+  </li>
+  <li><strong>First Note Within 24 Hours</strong>
+    <ul>
+      <li>Target: &gt;60% of new users add a note in first day</li>
+      <li>This indicates activation!</li>
+    </ul>
+  </li>
+  <li><strong>7-Day Retention</strong>
+    <ul>
+      <li>Target: &gt;40% of users return within 7 days</li>
+      <li>Measure: Users who open app 7 days after sign up</li>
+    </ul>
+  </li>
+  <li><strong>Partner Linking Within 7 Days</strong>
+    <ul>
+      <li>Target: &gt;30% of users link with partner</li>
+      <li>This dramatically increases retention!</li>
+    </ul>
+  </li>
+</ol>
+
+<hr />
+
+<h2 id="edge-cases--error-handling">Edge Cases &amp; Error Handling</h2>
+
+<h3 id="no-internet-connection">No Internet Connection</h3>
+<ul>
+  <li>Show friendly error: “No internet connection. Please check your network.”</li>
+  <li>Allow user to retry</li>
+</ul>
+
+<h3 id="firebase-service-down">Firebase Service Down</h3>
+<ul>
+  <li>Show error: “We’re having technical difficulties. Please try again later.”</li>
+  <li>Log error for monitoring</li>
+</ul>
+
+<h3 id="email-verification-future-enhancement">Email Verification (Future Enhancement)</h3>
+<ul>
+  <li>Currently: No email verification required</li>
+  <li>Future: Send verification email, require click before full access</li>
+</ul>
+
+<h3 id="applegoogle-sign-in-future">Apple/Google Sign-In (Future)</h3>
+<ul>
+  <li>Currently: Only email/password</li>
+  <li>Future: Add social login for faster onboarding</li>
+</ul>
+
+<hr />
+
+<h2 id="user-testing-feedback">User Testing Feedback</h2>
+
+<h3 id="what-users-like">What Users Like:</h3>
+<ul>
+  <li>✅ Simple, clear value proposition</li>
+  <li>✅ Quick sign up process (3 fields only)</li>
+  <li>✅ Immediate access (no email verification delay)</li>
+  <li>✅ Crisis resources link (shows care)</li>
+</ul>
+
+<h3 id="pain-points-to-address">Pain Points to Address:</h3>
+<ul>
+  <li>❌ Some users confused about “partner linking” (show explainer)</li>
+  <li>❌ Privacy concerns about sharing (emphasize encryption)</li>
+  <li>❌ Unclear what “AI coaching” means (add examples)</li>
+</ul>
+
+<hr />
+
+<h2 id="implementation-notes">Implementation Notes</h2>
+
+<h3 id="files-involved">Files Involved:</h3>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">lib/screens/splash_screen.dart</code></li>
+  <li><code class="language-plaintext highlighter-rouge">lib/screens/onboarding/welcome_screen.dart</code></li>
+  <li><code class="language-plaintext highlighter-rouge">lib/screens/onboarding/sign_up_screen.dart</code></li>
+  <li><code class="language-plaintext highlighter-rouge">lib/screens/onboarding/sign_in_screen.dart</code></li>
+  <li><code class="language-plaintext highlighter-rouge">lib/screens/home/home_screen.dart</code></li>
+  <li><code class="language-plaintext highlighter-rouge">lib/services/auth_service.dart</code></li>
+</ul>
+
+<h3 id="key-services">Key Services:</h3>
+<ul>
+  <li><strong>AuthService</strong> - Handles Firebase Authentication</li>
+  <li><strong>FirestoreService</strong> - Creates initial user document</li>
+  <li><strong>NotificationService</strong> - Requests iOS permissions</li>
+</ul>
+
+<h3 id="analytics-events-to-track">Analytics Events to Track:</h3>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">onboarding_started</code> - Welcome screen viewed</li>
+  <li><code class="language-plaintext highlighter-rouge">sign_up_started</code> - Sign up screen viewed</li>
+  <li><code class="language-plaintext highlighter-rouge">sign_up_completed</code> - Account created successfully</li>
+  <li><code class="language-plaintext highlighter-rouge">first_note_created</code> - User added first note</li>
+  <li><code class="language-plaintext highlighter-rouge">partner_linking_started</code> - User initiated linking</li>
+</ul>
+
+<hr />
+
+<p><strong>Next Journey</strong>: <a href="02-partner-linking.md">02. Partner Linking</a></p>
+
+      </article>
+    
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-wrap">
+      <p class="footer-copy">
+        <picture class="footer-picture">
+          <source media="(prefers-color-scheme: dark)" srcset="/happie-couple-public/assets/logos/dark_mode_icon_noname.jpeg">
+          <img
+            class="footer-logo"
+            src="/happie-couple-public/assets/logos/light_mode_icon_noname.jpeg"
+            alt="Happie Couple logo"
+          >
+        </picture>
+        <span>© 2026 Happie Couple. Built for healthier conversations.</span>
+      </p>
+      <div class="footer-links">
+        <a href="/happie-couple-public/PRIVACY_POLICY">Privacy Policy</a>
+        <a href="/happie-couple-public/TERMS_OF_SERVICE">Terms of Service</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
